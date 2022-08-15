@@ -6,8 +6,9 @@
 
 <form action="add" method="post">
     {% csrf_token %}
-   <input type="text" name="note"> 
+   {{form}}
   <input type="submit">
 </form>
 
+<a href="/Home/">View Tasks</a>
 {% endblock %}
