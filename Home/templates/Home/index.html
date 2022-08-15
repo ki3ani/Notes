@@ -1,0 +1,11 @@
+{% extends "Home/layout.html" %}
+
+{% block body %}
+<h1>Add your Notes</h1>
+<ul>
+    {% for note in notes %}
+    <li>{{note}}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
