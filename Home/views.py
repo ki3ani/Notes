@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django import forms
+from django.http import HttpResponseRedirect
+
 
 notes = ["chelsea","arsenal","bournemouth"]
 
@@ -18,6 +20,7 @@ def add(request):
         if form.is_valid():
             note = form.cleaned_data["note"]
             notes.append(note)
+            return HttpResponseRedirect("/Home")
 
         else:
             return render(request, "Home/index.html", {
