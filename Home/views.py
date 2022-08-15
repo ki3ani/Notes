@@ -3,15 +3,15 @@ from django.shortcuts import render
 from django import forms
 from django.http import HttpResponseRedirect
 
-
-notes = ["chelsea","arsenal","bournemouth"]
-
 class NewNotesForm(forms.Form):
     note = forms.CharField(label="New Notes")
 
 def index(request):
+    if "notes" not in request.session:
+        request.session["notes"] = []
+
     return render(request, "Home/index.html", {
-        "notes": notes
+        "notes": request.session["notes"]
     })
 
 def add(request):
@@ -19,7 +19,7 @@ def add(request):
         form = NewNotesForm(request.POST)
         if form.is_valid():
             note = form.cleaned_data["note"]
-            notes.append(note)
+            request.session["notes"] += [note]
             return HttpResponseRedirect("/Home")
 
         else:
