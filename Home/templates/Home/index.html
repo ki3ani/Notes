@@ -5,6 +5,8 @@
 <ul>
     {% for note in notes %}
     <li>{{note}}</li>
+    {% empty %}
+    <li>No notes added</li>
     {% endfor %}
 </ul>
 
