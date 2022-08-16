@@ -1,7 +1,9 @@
 {% extends "Home/layout.html" %}
-
+{% load static %}
 {% block body %}
+<link href="{% static 'Home/static/styles.css' %}" rel="stylesheet" />
 <h1>Add your Notes</h1>
+
 <ul>
     {% for note in notes %}
     <li>{{note}}</li>

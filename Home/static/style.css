@@ -1,0 +1,9 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium; 
+    text-align: center;
+    font-style: normal;
+    background-color: aquamarine;
+    background: url("/static/img/coh.jpg") 50% no-repeat fixed;
+ }
+
